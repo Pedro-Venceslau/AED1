@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*Faça uma função em linguagem C que recebe como parâmetros um
+vetor de números reais e a dimensão do vetor e retorna o maior valor
+presente no vetor.
+*/
+int Maior(int vet[], int tam){
+    int maior = vet[0];
+    for(int i=1; i<tam; i++){
+        if(vet[i] > maior){
+            maior = vet[i];
+        }
+    }
+    return maior;
+}
+int main(){
+    int vet[100], tam, res;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tam);
+
+    for(int i=0; i<tam; i++){
+        printf("\nDigite o numero %d:", i+1);
+        scanf("%d", &vet[i]);
+    }
+
+    res = Maior(vet, tam);
+    printf("Maior valor = %d", res);
+    return 0;
+}
