@@ -26,12 +26,12 @@ int main(){
     int vet[tam];
     srand(time(NULL));
     for(int i=0; i<tam; i++){
-        vet[i] = (rand()%101); //valores aleatório entre 1 e 100
+        vet[i] = (rand()%100) + 1; //valores aleatório entre 1 e 100
     }
 
-    clock_t inicio = clock();
+    inicio = clock();
     Insertion_Sort(vet, tam);
-    clock_t fim = clock();
+    fim = clock();
     tempo_execucao = (double)(fim - inicio) / CLOCKS_PER_SEC;
     
     printf("Tamanho do vetor = %d\n", tam);
