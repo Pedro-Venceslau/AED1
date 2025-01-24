@@ -9,9 +9,8 @@ int main() {
     scanf("%f", &valor);
     
     parte_inteira = (int)valor;
-    parte_centavos = (valor - parte_inteira) * 100 + 0.5;  // Ajuste para arredondamento correto
+    parte_centavos = (valor - parte_inteira) * 100 + 0.5;  
     
-    // Cálculo das notas
     notas100 = parte_inteira / 100;
     parte_inteira %= 100;
     notas50 = parte_inteira / 50;
@@ -25,7 +24,6 @@ int main() {
     notas2 = parte_inteira / 2;
     parte_inteira %= 2;
 
-    // Cálculo das moedas
     moedas1 = parte_inteira;
     moedas50 = parte_centavos / 50;
     parte_centavos %= 50;
