@@ -23,13 +23,12 @@ int contar_diamantes(char *linha) {
 
 int main() {
     int n, i;
-    char linha[1001]; // Até 1000 caracteres por caso de teste
-
-    scanf("%d", &n); // Lê o número de casos de teste
+    char linha[1001]; 
+    scanf("%d", &n); 
 
     for (i = 0; i < n; i++) {
-        scanf("%s", linha); // Lê cada linha de entrada
-        printf("%d\n", contar_diamantes(linha)); // Imprime o número de diamantes
+        scanf("%s", linha); 
+        printf("%d\n", contar_diamantes(linha)); 
     }
 
     return 0;
