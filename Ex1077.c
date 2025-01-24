@@ -59,7 +59,7 @@ void infixa_para_posfixa(char *infixa, char *posfixa) {
     for (i = 0; infixa[i] != '\0'; i++) {
         c = infixa[i];
 
-        if (isalnum(c)) { // Se for operando (letra ou número), adiciona à saída
+        if (isalnum(c)) { 
             posfixa[j++] = c;
         } else if (c == '(') { 
             empilhar(&pilha, c);
@@ -67,8 +67,8 @@ void infixa_para_posfixa(char *infixa, char *posfixa) {
             while (!vazia(&pilha) && topo(&pilha) != '(') {
                 posfixa[j++] = desempilhar(&pilha);
             }
-            desempilhar(&pilha); // Remove '('
-        } else if (operador(c)) { // Se for operador
+            desempilhar(&pilha); 
+        } else if (operador(c)) { 
             while (!vazia(&pilha) && precedencia(topo(&pilha)) >= precedencia(c)) {
                 posfixa[j++] = desempilhar(&pilha);
             }
