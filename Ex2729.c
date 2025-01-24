@@ -7,18 +7,16 @@ int comparar(const void *a, const void *b) {
 }
 
 void processar_lista(char *linha) {
-    char *itens[1000]; // Vetor para armazenar os itens
+    char *itens[1000]; 
     int contador = 0;
 
     char *token = strtok(linha, " ");
     while (token != NULL) {
-        // Adiciona o item ao vetor
         itens[contador++] = token;
         token = strtok(NULL, " ");
     }
     qsort(itens, contador, sizeof(char *), comparar);
 
-    // Remove duplicatas e imprime os itens únicos
     printf("%s", itens[0]);
     for (int i = 1; i < contador; i++) {
         if (strcmp(itens[i], itens[i - 1]) != 0) {
