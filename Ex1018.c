@@ -3,12 +3,10 @@
 int main() {
     int valor, notas100, notas50, notas20, notas10, notas5, notas2, notas1;
     
-    // Lê o valor do usuário
     scanf("%d", &valor);
     
     printf("%d\n", valor);
 
-    // Calcula a quantidade mínima de notas
     notas100 = valor / 100;
     valor %= 100;
     notas50 = valor / 50;
