@@ -1,13 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-// N = alunos -- N <= 100
-// K = número sorteado -- K <= N <= 100
-
 void BubbleSort(char vet[][21], int n){
     char temp[21];
-    for(int i=0; i<n-1; i++){ // Percorrer todo o vetor
-        for(int j=0; j< n -i -1; j++){ // A cada laço, o "maior" fico por ultimo
+    for(int i=0; i<n-1; i++){ 
+        for(int j=0; j< n -i -1; j++){ 
             if (strcmp(vet[j], vet[j+1]) > 0){
                 strcpy(temp, vet[j]);
                 strcpy(vet[j], vet[j+1]);
