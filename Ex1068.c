@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
-//Criando os nós da Pilha
+
 typedef struct no{
     char dado;
     struct no *seg;
 } No;
 
-No *topo = NULL; //Variável global
+No *topo = NULL; 
 
-void PUSH (char caract){ //Empilha
+void PUSH (char caract){ 
     No *novo = malloc(sizeof(No));
     novo->dado = caract;
     novo->seg = topo;
@@ -24,23 +24,21 @@ void POP(){
     free(temp);
 }
 void Verific_Parentese(char expr[]){
-    //Verificando o TAM da string
+  
     int tam = strlen(expr);
 
-    //Percorrendo toda a string
     for(int i=0; i<tam; i++){
-        if(expr[i] == '('){ // Empilhar = PUSH
+        if(expr[i] == '('){ 
             PUSH(expr[i]);
-        } else if (expr[i] == ')') {  // Verificar se a pilha está vazia antes de desempilhar
+        } else if (expr[i] == ')') {  
             if (topo == NULL) {
                 printf("incorrect\n");
                 return;
             }
-            POP();  // Desempilhar quando encontrar ')'
+            POP(); 
         }
     }
 
-    // Se a pilha estiver vazia no final, os parênteses estão balanceados
     if (topo == NULL) {
         printf("correct\n");
     } else {
@@ -53,7 +51,7 @@ int main(){
     int qtd_exp;
     char expr[1000];
     scanf("%d", &qtd_exp);
-    getchar(); // Para consumir o caractere '\n' deixado pelo scanf
+    getchar(); 
 
     for(int i=1; i<=qtd_exp; i++){
         fgets(expr, 1000, stdin);
